@@ -1,13 +1,105 @@
-$main_color: #4533B2;
-$light_color: #634EDF;
-$semi_color: #7B61FF;
-$text_color: #2E2D30;
-$title_color: #272630;
-$white:#FFFFFF;
+$blue: #2E3F65;
+$white: #FFFFFF;
+$grey_light:#E9E9E9;
+$grey_dark:#444444;
+$acent_color:#D85140;
+
+$xs: 430px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1440px;
+
 
 .container {
-
+    padding: 0 60px;
+    max-width: 100%;
 }
 
 
 //MAIN STYLES//
+
+.header {
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white;
+    border-radius: 0px 0px 16px 16px;
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 150px;
+
+        .header-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            line-height: 19px;
+            color: $blue;
+            font-weight: 400;
+
+                a {
+                    font-family: 'Inter', sans-serif;
+                    transition: all;
+                    transition-duration: 300ms;
+
+                    &:hover {
+                        transition: all;
+                        transition-duration: 300ms;
+                        color: $acent_color;
+                    }
+                }
+        }
+    }
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+            .header-mobile {
+                display: flex;
+                flex-direction: column;
+                text-align: right;
+                font-size: 24px;
+                line-height: 36px;
+                color: $blue;
+                
+                    a {
+                        transition: all;
+                        transition-duration: 300ms;
+                        &:hover {
+                            transition: all;
+                            transition-duration: 300ms;
+                            color: $acent_color;
+                        }
+                    }
+
+                    p {
+                        font-weight: 500;
+                        line-height: 15px;
+                        font-size: 12px;
+                    }
+            }
+        .header-button {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.02em;
+            color: $blue;
+            padding: 15px 30px;
+            border: 1px solid #333E57;
+            border-radius: 10px;
+            transition: all;
+            transition-duration: 300ms;
+
+                &:hover {
+                    transition: all;
+                    transition-duration: 300ms;
+                    border: 1px solid $acent_color;
+                    color: $acent_color;
+                }
+        }
+    }
+        
+}
