@@ -101,5 +101,121 @@ $lg: 1440px;
                 }
         }
     }
-        
+}
+
+.main-page {
+    display: flex;
+    justify-content: space-between;
+
+        .main-page-left {
+            flex: 50%;
+            background: $blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px 80px;
+
+                .main-page-list {
+                    display: flex;
+                    gap: 24px;
+
+                        .page-list_item {
+                            display: flex;
+                            align-items: center;
+
+                                a {
+                                    font-weight: 400;
+                                    font-size: 15px;
+                                    line-height: 18px;
+                                    letter-spacing: -0.04em;
+                                    color: #FAFAFA;
+                                    font-family: 'Inter', sans-serif;
+                                    position: relative;
+                                    text-decoration: none;
+
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            left: 0; bottom: -5px;
+                                            width: 0;
+                                            height: 1.5px;
+                                            background-color: $acent_color;
+                                            transition: width 0.35s;
+                                        }
+                                        &:hover::before {
+                                            width: 100%;
+                                        }
+                                }
+                        }
+                }
+            .page-left-title {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                    h1 {
+                        font-size: 56px;
+                        line-height: 62px;
+                        color: #FAFAFA;
+                        font-weight: 400;
+                        letter-spacing: -0.03em;
+                        max-width: 660px;
+                    }
+                    p {
+                        font-size: 16px;
+                        line-height: 22px;
+                        font-family: 'Inter', sans-serif;
+                        color: #FAFAFA;
+                        max-width: 560px;
+                    }
+                    .left-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                        background: $acent_color;
+                        padding: 15px 30px;
+                        border-radius: 10px;
+                        transition: all;
+                        transition-duration: 300ms;
+                        max-width: 550px;
+                        margin-top: 20px;
+                    }
+            }
+
+            .left-bottom {
+                display: flex;
+                gap: 60px;
+
+                    .left-bottom_item {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                        max-width: 168px;
+
+                            span {
+                                font-weight: 400;
+                                font-size: 32px;
+                                line-height: 45px;
+                                color: $white;
+                            }
+
+                            p {
+                                color: rgba(250, 250, 250, 0.6);
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 19px;
+                                font-family: 'Inter', sans-serif;
+                            }
+                    }
+            }
+        }
+        .main-page-right {
+            flex: 50%;
+        }
+}
+
+.about {
+    
 }
