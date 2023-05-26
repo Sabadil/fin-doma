@@ -7,6 +7,7 @@ $acent_color:#D85140;
 $xs: 430px;
 $sm: 768px;
 $md: 1024px;
+$mdd: 1240px;
 $lg: 1440px;
 
 
@@ -217,5 +218,197 @@ $lg: 1440px;
 }
 
 .about {
+    margin-top: 120px;
+
+        .about-main {
+            display: flex;
+
+                .about-left {
+                    flex: 50%;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+
+                        .about-left_title {
+                            font-weight: 400;
+                            font-size: 48px;
+                            line-height: 53px;
+                            color: $blue;
+                        }
+                        .about-left_text {
+                            margin-top: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 25px;
+                            max-width: 410px;
+
+                                p {
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 22px;
+                                    font-family: 'Inter', sans-serif;
+                                    color: $blue;
+                                }
+                        }
+                        .about-left_grid {
+                            display: grid;
+                            grid-template-columns: repeat(2, minmax(0, 1fr));
+                            grid-template-rows: repeat(2, minmax(0, 1fr));
+                            row-gap: 28px;
+
+                                .left-grid_item {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+
+                                    span {
+                                        color: $acent_color;
+                                        font-size: 48px;
+                                        line-height: 53px;
+                                        letter-spacing: -0.03em;
+                                        font-weight: 400;
+                                    }
+                                    p {
+                                        font-size: 16px;
+                                        color: $blue;
+                                        line-height: 22px;
+                                        font-family: 'Inter', sans-serif;
+                                        max-width: 230px;
+                                    }
+                                }
+                        }
+                }
+                .about-right {
+                    flex: 50%;
+                }
+        }
+}
+
+.our-projects {
+    margin-top: 120px;
+
+        h2 {
+            font-size: 48px;
+            line-height: 53px;
+            letter-spacing: -0.03em;
+            color: $blue;
+        }
+    .our-projects_main {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .our-projects-item {
+            display: flex;
+
+                .our-porject-swiper {
+                    flex: 50%;
+                    border-radius: 8px 0px 0px 8px;
+                }
+                .our-projects_left {
+                    flex: 50%;
+                    padding: 41px 89px 41px 40px;
+                    background: $blue;
+                    border-radius: 0px 8px 8px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    justify-content: space-between;
+
+                        h3 {
+                            font-weight: 500;
+                            font-size: 24px;
+                            line-height: 31px;
+                            color: #FAFAFA;
+                            font-weight: 500;
+                        }
+                        p {
+                            font-weight: 500;
+                            font-size: 24px;
+                            line-height: 31px;
+                            color: #FAFAFA;
+                            font-weight: 500;
+                        }
+                    .projects-left_descr {
+                        font-family: 'Inter', sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: #FAFAFA;
+                        max-width: 530px;
+                    }
+
+                    .projects-left_flex {
+                        display: flex;
+                        .projects-left_grid {
+                            display: grid;
+                            grid-template-columns: repeat(2, minmax(0, 1fr));
+                            grid-template-rows: repeat(2, minmax(0, 1fr));
+                            margin-top: 20px;
+                            row-gap: 15px;
+                            column-gap: 30px;
     
+                            .projects-gird_item {
+                                display: flex;
+                                gap: 4px;
+                                align-items: center;
+                                
+                                    p {
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                        font-family: 'Inter', sans-serif;
+                                        font-weight: 400;
+                                        color: #FAFAFA;
+                                    }
+                            }
+                        }
+                    }
+                    
+                    .projects-btns {
+                        display: flex;
+                        gap: 12px;
+
+                            .projects-btn_pdf {
+                                padding: 15px 28px;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 24px;
+                                letter-spacing: 0.02em;
+                                color: $blue;
+                                background: $white;
+                                transition: all;
+                                transition-duration: 300ms;
+                                border-radius: 10px;
+
+                                    &:hover {
+                                        color: $white;
+                                        background: $acent_color;
+                                        transition: all;
+                                        transition-duration: 300ms;
+                                    }
+                            }
+                        .projects-btn_consult {
+                            padding: 15px 60px;
+                            letter-spacing: 0.02em;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $white;
+                            background: $acent_color;
+                            transition: all;
+                            transition-duration: 300ms;
+                            border-radius: 10px;
+
+                                &:hover {
+                                    color: $acent_color;
+                                    background: $white;
+                                    transition: all;
+                                    transition-duration: 300ms;
+                                }
+                        }
+                    }
+                }
+        }
+    }
 }
