@@ -41,6 +41,54 @@
           <button class="header-button">
             ЗАКАЗАТЬ ЗВОНОК
           </button>
+          <div x-data="{ open: false }" class="header-burger">
+            <button @click="open = !open" class="burger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div x-show="open" @click.away="open = false" @keydown.escape.window="open = false" class="menu-items" x-transition:enter.duration.300ms="" x-transition:leave.duration.300ms="" class="menu-items">
+              <div class="menu-items__close">
+                <button @click="open = false">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 6L18 18M6 18L18 6L6 18Z" stroke="#2E3F65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="menu-items__content">
+                <p class="menu-items__content--title">
+                  В Костроме и Костромской области
+                </p>
+                <ul class="menu-items__content--list">
+                  <li>
+                    <a href="#about" @click="open = false">О нас</a>
+                  </li>
+                  <li>
+                    <a href="#our-projects" @click="open = false">Проекты</a>
+                  </li>
+                  <li>
+                    <a href="#advantages" @click="open = false">Преимущества</a>
+                  </li>
+                  <li>
+                    <a href="#" @click="open = false">Технологии</a>
+                  </li>
+                  <li>
+                    <a href="#" @click="open = false">Производство</a>
+                  </li>
+                  <li>
+                    <a href="#" @click="open = false">Отзывы</a>
+                  </li>
+                  <li>
+                    <a href="#" @click="open = false">Контакты</a>
+                  </li>
+                </ul>
+                <div class="menu-items__content--bottom">
+                  <a href="tel:+79203849184">+7 (920) 384 91 84</a>
+                  <p>Без выходных: 9:00-18:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -57,7 +105,7 @@
                     <a href="#our-projects">Проекты</a>
                   </li>
                   <li class="page-list_item">
-                    <a href="">Преимущества</a>
+                    <a href="#advantages">Преимущества</a>
                   </li>
                   <li class="page-list_item">
                     <a href="">Технологии</a>
@@ -374,6 +422,21 @@
                   <button class="projects-btn_consult">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="advantages" class="advantages">
+        <div class="container">
+          <h4 class="advantages__title">
+            Преимущества домов из трехслойных финских панелей
+          </h4>
+          <div class="advantages__grid">
+            <div class="advantages__grid-left">
+              123
+            </div>
+            <div class="advantages__grid-right">
+              123
             </div>
           </div>
         </div>
