@@ -19,4 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         parallax: true,
         speed: 1200,
       });
+
+      const swiperRealized = new Swiper(".swiper-realized", {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        navigation: {
+          nextEl: ".realized-button-next",
+          prevEl: ".realized-button-prev",
+        },
+      });
 })
