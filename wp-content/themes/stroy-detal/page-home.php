@@ -401,19 +401,41 @@ get_header();
                 </div>
             </div>
         </section>
-        <section class="prod" id="prod">
-            <div class="container">
-                <h4 class="prod__title">
-                    Собственное производство
-                </h4>
-                <div class="prod__grid">
-                    <a href="#" class="prod__grid--item">
-                        <img src="<?=get_template_directory_uri();?>/img/prod-1.png" alt="">
-                        <p>Изготовление стеновых панелей</p>
-                    </a>
+
+        <?php
+        $ownProductionTitle = get_field('own_production_title');
+        $ownProductionDesc = get_field('own_production_desc');
+        $ownProduction = get_field('own_production'); ?>
+
+        <?php if($ownProduction != ''): ?>
+            <section class="prod" id="prod">
+                <div class="container">
+                    <?php if($ownProductionTitle != ''): ?>
+                        <h4 class="prod__title"><?=$ownProductionTitle;?></h4>
+                    <?php endif; ?>
+
+                    <?php if($realizedProjectsDesc != ''): ?>
+                        <p><?=$realizedProjectsDesc;?></p>
+                    <?php endif; ?>
+
+                    <div class="prod__grid">
+                        <?php foreach ($ownProduction as $item):
+
+                            $itemProduct = $item['item_product']->ID;
+                            if($itemProduct != ''): ?>
+                                <a href="<?=get_permalink($itemProduct);?>" class="prod__grid--item">
+                                    <img src="<?=get_the_post_thumbnail_url($itemProduct, 'Фото 500px');?>" alt="<?=get_the_title($itemProduct);?>" loading="lazy">
+                                    <p><?=get_the_title($itemProduct);?></p>
+                                </a>
+                            <?php endif;
+
+                        endforeach; ?>
+
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
+
         <section class="reviews" id="reviews">
             <div class="container">
                 <div class="reviews__top">
