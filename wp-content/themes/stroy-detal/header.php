@@ -17,6 +17,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+    <meta name="theme-color" content="#2E3F65" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#444444" media="(prefers-color-scheme: dark)">
+
 	<?php wp_head(); ?>
 </head>
 
@@ -27,7 +30,7 @@
     <div class="header">
         <div class="header-left">
             <a href="/">
-                <img src="assets/images/logo-header.svg" alt="logo-header">
+                <img src="<?=get_template_directory_uri();?>/img/logo-header.svg" alt="logo-header">
             </a>
             <div class="header-location">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

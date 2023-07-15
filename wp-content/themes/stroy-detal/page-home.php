@@ -73,7 +73,7 @@ get_header();
                     </div>
                 </div>
                 <div class="main-page-right">
-                    <img width="100%" src="assets/images/main.png" alt="main">
+                    <img width="100%" src="<?=get_template_directory_uri();?>/img/main.png" alt="main">
                 </div>
             </div>
         </section>
@@ -106,7 +106,7 @@ get_header();
                         </div>
                     </div>
                     <div class="about-right">
-                        <img width="100%" src="assets/images/about.png" alt="about">
+                        <img width="100%" src="<?=get_template_directory_uri();?>/img/about.png" alt="about">
                     </div>
                 </div>
             </div>
@@ -119,13 +119,13 @@ get_header();
                         <div class="swiper our-porject-swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
                                 </div>
                             </div>
                         </div>
@@ -176,13 +176,13 @@ get_header();
                         <div class="swiper our-porject-swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
                                 </div>
                             </div>
                         </div>
@@ -312,7 +312,7 @@ get_header();
                         </div>
                     </div>
                     <div class="advantages__grid-right">
-                        <img width="100%" style="display: block !important;" src="assets/images/adv.png" alt="">
+                        <img width="100%" style="display: block !important;" src="<?=get_template_directory_uri();?>/img/adv.png" alt="">
                     </div>
                 </div>
             </div>
@@ -344,7 +344,7 @@ get_header();
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="swiper-realized-item">
-                                    <img src="assets/images/realized.png" alt="">
+                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
                                     <div>
                       <span>
                         Щетниково
@@ -355,7 +355,7 @@ get_header();
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-realized-item">
-                                    <img src="assets/images/realized.png" alt="">
+                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
                                     <div>
                       <span>
                         Щетниково5555
@@ -366,7 +366,7 @@ get_header();
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-realized-item">
-                                    <img src="assets/images/realized.png" alt="">
+                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
                                     <div>
                       <span>
                         Щетниково444
@@ -377,7 +377,7 @@ get_header();
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-realized-item">
-                                    <img src="assets/images/realized.png" alt="">
+                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
                                     <div>
                       <span>
                         Щетниково123
@@ -388,7 +388,7 @@ get_header();
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-realized-item">
-                                    <img src="assets/images/realized.png" alt="">
+                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
                                     <div>
                       <span>
                         Щетниково2222
@@ -426,7 +426,7 @@ get_header();
                         </form>
                     </div>
                     <div class="manage__box--img">
-                        <img src="assets/images/form-home.png" alt="">
+                        <img src="<?=get_template_directory_uri();?>/img/form-home.png" alt="">
                     </div>
                 </div>
             </div>
@@ -438,7 +438,7 @@ get_header();
                 </h4>
                 <div class="prod__grid">
                     <a href="#" class="prod__grid--item">
-                        <img src="assets/images/prod-1.png" alt="">
+                        <img src="<?=get_template_directory_uri();?>/img/prod-1.png" alt="">
                         <p>Изготовление стеновых панелей</p>
                     </a>
                 </div>
@@ -478,7 +478,7 @@ get_header();
                         Проект: одноэтажный жилой дом Тип-1А
                       </span>
                                     </div>
-                                    <img src="assets/images/otzv.png" alt="otzv">
+                                    <img src="<?=get_template_directory_uri();?>/img/otzv.png" alt="otzv">
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -493,7 +493,7 @@ get_header();
                         Проект: одноэтажный жилой дом Тип-1А
                       </span>
                                     </div>
-                                    <img src="assets/images/otzv.png" alt="otzv">
+                                    <img src="<?=get_template_directory_uri();?>/img/otzv.png" alt="otzv">
                                 </div>
                             </div>
                         </div>
