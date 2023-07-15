@@ -1,1 +1,23 @@
-/node_modules
+/node_modules/*
+.idea/
+wp-config.php
+/wp-content/themes/twenty*/
+/license.txt
+/readme.html
+# /.htaccess
+*.log
+.bash_history
+.cache/
+.ssh/
+
+# /wp-admin/
+# /wp-content/index.php
+# /wp-content/languages
+# /wp-content/plugins/index.php
+# /wp-content/themes/index.php
+# /wp-includes/
+# /index.php
+# /wp-*.php
+# /xmlrpc.php
+# /wp-content/uploads/
+# /wp-content/plugins
