@@ -1743,6 +1743,7 @@ $lg: 1440px;
     display: flex;
     align-items: center;
     gap: 45px;
+    justify-content: space-between;
 
     @media (max-width:$xs) {
         font-weight: 24px;
