@@ -11,9 +11,10 @@ import 'swiper/css/bundle';
 document.addEventListener('DOMContentLoaded', () => {
     const swiperOurProjects = new Swiper(".our-porject-swiper", {
         centeredSlides: true,
+        loop: true,
         autoplay: {
         delay: 4000,
-        loop: true,
+        
         disableOnInteraction: false,
       },
         parallax: true,
@@ -26,6 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         navigation: {
           nextEl: ".realized-button-next",
           prevEl: ".realized-button-prev",
+        },
+
+        breakpoints: {
+          // mobile + tablet - 320-990
+          320: {
+            slidesPerView: 1.2
+          },
+          // desktop >= 991
+          430: {
+            slidesPerView: 1.3
+          },
+          991: {
+            slidesPerView: 4
+          }
+        }
+      });
+
+      const swiperReviews = new Swiper(".swiper-reviews", {
+        navigation: {
+          nextEl: ".reviews-button-next",
+          prevEl: ".reviews-button-prev",
         },
       });
 })
