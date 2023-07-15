@@ -554,61 +554,58 @@ get_header();
         <?php endif; ?>
 
 
-        <section class="qna">
-            <div class="container">
-                <div class="qna__main">
-                    <div class="qna__main--left">
-                        <div class="qna__main--left-text">
-                            <h4>
-                                Частые вопросы
-                            </h4>
-                            <p>Если здесь нет ответа на ваш вопрос и вам нужна консультация — смело обращайтесь, мы поможем!</p>
-                        </div>
-                        <div>
-                            <button class="qna__main--left-btn form-modal-2">задать вопрос</button>
-                        </div>
-                    </div>
-                    <div class="qna__main--qna">
-                        <div x-data="{ isOpen:false }">
-                            <button class="qna__main--qna-btn" @click="isOpen = !isOpen" :style="(isOpen) ? 'border-bottom: 0;' : ''">
-                                <p>Какие сроки строительства дома?</p>
-                                <svg :style="(isOpen) ? 'transform: rotate(45deg)' : ''" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="plus">
-                                        <path id="Vector" d="M12 6.5V12.5M12 12.5V18.5M12 12.5H18M12 12.5H6" stroke="#2E3F65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </g>
-                                </svg>
-                            </button>
-                            <div class="qna__main--qna-content" x-ref="container1" x-bind:style="isOpen ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                                <p>
-                                    Выбор вида фундамента для частного дома обусловлен многими факторами: свойствами почвы на строительном участке, размерами строения, используемыми материалами, уровнем грунтовых вод и т.д.
-                                </p>
-                                <p>
-                                    Многолетний опыт и профессионализм наших бригад позволяет реализовать любой из возможных видов фундамента. Мы проведём инженерно-геологические изыскания, после чего определим наиболее безопасный вид фундамента для вашего дома.
-                                </p>
+        <?php
+        $faqTitle = get_field('faq_title');
+        $faqDesc = get_field('faq_desc');
+        $faqButton = get_field('faq_button');
+        $faq = get_field('faq'); ?>
+
+        <?php if($faq != ''): ?>
+            <section class="qna">
+                <div class="container">
+                    <div class="qna__main">
+                        <div class="qna__main--left">
+                            <div class="qna__main--left-text">
+                                <?php if($faqTitle != ''): ?>
+                                    <h4><?=$faqTitle;?></h4>
+                                <?php endif; ?>
+
+                                <?php if($faqDesc != ''): ?>
+                                    <p><?=$faqDesc;?></p>
+                                <?php endif; ?>
+                            </div>
+                            <div>
+                                <button class="qna__main--left-btn form-modal-2"><?=($faqButton != '') ? $faqButton : 'задать вопрос';?></button>
                             </div>
                         </div>
-                        <div x-data="{ isOpen:false }">
-                            <button class="qna__main--qna-btn" @click="isOpen = !isOpen" :style="(isOpen) ? 'border-bottom: 0;' : ''">
-                                <p>Какие виды фундамента и технологии постройки вы используете?</p>
-                                <svg :style="(isOpen) ? 'transform: rotate(45deg)' : ''" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="plus">
-                                        <path id="Vector" d="M12 6.5V12.5M12 12.5V18.5M12 12.5H18M12 12.5H6" stroke="#2E3F65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </g>
-                                </svg>
-                            </button>
-                            <div class="qna__main--qna-content" x-ref="container1" x-bind:style="isOpen ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                                <p>
-                                    Выбор вида фундамента для частного дома обусловлен многими факторами: свойствами почвы на строительном участке, размерами строения, используемыми материалами, уровнем грунтовых вод и т.д.
-                                </p>
-                                <p>
-                                    Многолетний опыт и профессионализм наших бригад позволяет реализовать любой из возможных видов фундамента. Мы проведём инженерно-геологические изыскания, после чего определим наиболее безопасный вид фундамента для вашего дома.
-                                </p>
-                            </div>
+
+                        <div class="qna__main--qna">
+                            <?php foreach ($faq as $item):
+
+                                $itemTitle = $item['item_title'];
+                                $itemDesc = $item['item_desc'];
+                                if($itemTitle != '' && $itemDesc != ''): ?>
+                                    <div x-data="{ isOpen:false }">
+                                        <button class="qna__main--qna-btn" @click="isOpen = !isOpen" :style="(isOpen) ? 'border-bottom: 0;' : ''">
+                                            <p><?=$itemTitle;?></p>
+                                            <svg :style="(isOpen) ? 'transform: rotate(45deg)' : ''" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g id="plus">
+                                                    <path id="Vector" d="M12 6.5V12.5M12 12.5V18.5M12 12.5H18M12 12.5H6" stroke="#2E3F65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                            </svg>
+                                        </button>
+                                        <div class="qna__main--qna-content" x-ref="container1" x-bind:style="isOpen ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"><?=$itemDesc;?></div>
+                                    </div>
+                                <?php endif;
+
+                            endforeach; ?>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
+
+
         <section class="contacts" id="contacts">
             <div class="contacts__items">
                 <div class="contacts__items--left">
