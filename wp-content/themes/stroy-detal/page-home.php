@@ -113,123 +113,112 @@ get_header();
         </section>
         <section id="our-projects" class="our-projects">
             <div class="container">
-                <h2>Наши проекты</h2>
-                <div class="our-projects_main">
-                    <div class="our-projects-item">
-                        <div class="swiper our-porject-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="our-projects_left">
-                            <div class="our-projects_title">
-                                <h3>Одноэтажный жилой дом Тип-1А</h3>
-                                <p>от 5 800 000 ₽</p>
-                            </div>
-                            <div class="projects-left_descr">
-                                Одноэтажный финский дом на четыре спальни, с террасой и сауной. Он подходит как в качестве дачи для летнего отдыха на природе, так и для постоянного проживания.
-                            </div>
-                            <div class="projects-left_flex">
-                                <div class="projects-left_grid">
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M14.5 4H19V12M19 12H16.5M19 12V20H10.5M10.5 20V12M10.5 20H4V4H8L11 6.13333M10.5 12H13M10.5 12H8" stroke="#9EA2AB"/>
-                                        </svg>
-                                        <p>Площадь: <span>181</span>м2</p>
+                <?php
+                $ourProjectsTitle = get_field('our_projects_title');
+                $ourProjects = get_field('our_projects'); ?>
+
+                <?php if($ourProjectsTitle != ''): ?>
+                    <h2><?=$ourProjectsTitle;?></h2>
+                <?php endif; ?>
+                
+                <?php if($ourProjects != ''): ?>
+                    <div class="our-projects_main">
+                        <?php foreach ($ourProjects as $item): ?>
+
+                            <?php if($item['item_title'] != '' && $item['item_images'] != ''):
+                                $itemTitle = $item['item_title'];
+                                $itemDesc = $item['item_desc'];
+                                $itemSquare = $item['item_square'];
+                                $itemFloors = $item['item_floors'];
+                                $itemRooms = $item['item_rooms'];
+                                $itemSize = $item['item_size'];
+                                $itemImages = $item['item_images'];
+                                $itemFile = $item['item_file']; ?>
+
+                                <div class="our-projects-item">
+                                    <div class="swiper our-porject-swiper">
+                                        <?php if($itemImages != ''): ?>
+                                            <div class="swiper-wrapper">
+                                                <?php foreach ($itemImages as $slide):
+
+                                                    $slideImage = wp_get_attachment_image_url($slide['image'], 'Фото 768px');
+                                                    if($slideImage != ''): ?>
+                                                        <div class="swiper-slide">
+                                                            <img width="100%" src="<?=$slideImage;?>" alt="swiper-img" loading="lazy">
+                                                        </div>
+                                                    <?php endif;
+
+                                                endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 4V20H4V15H9.33333V9H14.6667V4H20Z" stroke="#9EA2AB"/>
-                                        </svg>
-                                        <p>Этажей: <span>1</span></p>
-                                    </div>
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 3V21H4V3H20Z" stroke="#9EA2AB"/>
-                                            <circle cx="17" cy="14" r="1" fill="#9EA2AB"/>
-                                        </svg>
-                                        <p>Комнат: <span>3</span></p>
-                                    </div>
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 20H10V10H13H16H20V4H4V20Z" stroke="#9EA2AB"/>
-                                            <path d="M16 7V10H13M13 10V7M13 10H10M10 10V7M10 10H7M10 10V13M10 13H7M10 13V16H7" stroke="#9EA2AB"/>
-                                        </svg>
-                                        <p>Размер: <span>15x12</span></p>
+
+                                    <div class="our-projects_left">
+                                        <?php if($itemTitle != ''): ?>
+                                            <h3><?=$itemTitle;?></h3>
+                                        <?php endif; ?>
+
+                                        <?php if($itemDesc != ''): ?>
+                                            <div class="projects-left_descr"><?=$itemDesc;?></div>
+                                        <?php endif; ?>
+
+                                        <div class="projects-left_flex">
+                                            <div class="projects-left_grid">
+
+                                                <?php if($itemSquare != ''): ?>
+                                                    <div class="projects-gird_item">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M14.5 4H19V12M19 12H16.5M19 12V20H10.5M10.5 20V12M10.5 20H4V4H8L11 6.13333M10.5 12H13M10.5 12H8" stroke="#9EA2AB"/>
+                                                        </svg>
+                                                        <p>Площадь: <span><?=$itemSquare;?></span> м2</p>
+                                                    </div>
+                                                <?php endif; ?>
+
+                                                <?php if($itemFloors != ''): ?>
+                                                    <div class="projects-gird_item">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M20 4V20H4V15H9.33333V9H14.6667V4H20Z" stroke="#9EA2AB"/>
+                                                        </svg>
+                                                        <p>Этажей: <span><?=$itemFloors;?></span></p>
+                                                    </div>
+                                                <?php endif; ?>
+
+
+                                                <?php if($itemRooms != ''): ?>
+                                                    <div class="projects-gird_item">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M20 3V21H4V3H20Z" stroke="#9EA2AB"/>
+                                                            <circle cx="17" cy="14" r="1" fill="#9EA2AB"/>
+                                                        </svg>
+                                                        <p>Комнат: <span><?=$itemRooms;?></span></p>
+                                                    </div>
+                                                <?php endif; ?>
+
+                                                <?php if($itemSize != ''): ?>
+                                                    <div class="projects-gird_item">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M4 20H10V10H13H16H20V4H4V20Z" stroke="#9EA2AB"/>
+                                                            <path d="M16 7V10H13M13 10V7M13 10H10M10 10V7M10 10H7M10 10V13M10 13H7M10 13V16H7" stroke="#9EA2AB"/>
+                                                        </svg>
+                                                        <p>Размер: <span><?=$itemSize;?></span></p>
+                                                    </div>
+                                                <?php endif; ?>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="projects-btns">
+                                            <?php if($itemFile != ''): ?>
+                                                <a href="<?=$itemFile;?>" class="projects-btn_pdf" download>СКАЧАТЬ PDF ПРОЕКТА</a>
+                                            <?php endif; ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="projects-btns">
-                                <button class="projects-btn_pdf">СКАЧАТЬ PDF ПРОЕКТА</button>
-                            </div>
-                        </div>
+                            <?php endif ?>
+
+                        <?php endforeach; ?>
                     </div>
-                    <div class="our-projects-item">
-                        <div class="swiper our-porject-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img width="100%" src="<?=get_template_directory_uri();?>/img/swiper-img-1.png" alt="swiper-img">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="our-projects_left">
-                            <div class="our-projects_title">
-                                <h3>Одноэтажный жилой дом Тип-1А</h3>
-                                <p>от 5 800 000 ₽</p>
-                            </div>
-                            <div class="projects-left_descr">
-                                Одноэтажный финский дом на четыре спальни, с террасой и сауной. Он подходит как в качестве дачи для летнего отдыха на природе, так и для постоянного проживания.
-                            </div>
-                            <div class="projects-left_flex">
-                                <div class="projects-left_grid">
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M14.5 4H19V12M19 12H16.5M19 12V20H10.5M10.5 20V12M10.5 20H4V4H8L11 6.13333M10.5 12H13M10.5 12H8" stroke="#9EA2AB"/>
-                                        </svg>
-                                        <p>Площадь: <span>181</span>м2</p>
-                                    </div>
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 4V20H4V15H9.33333V9H14.6667V4H20Z" stroke="#9EA2AB"/>
-                                        </svg>
-                                        <p>Этажей: <span>1</span></p>
-                                    </div>
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 3V21H4V3H20Z" stroke="#9EA2AB"/>
-                                            <circle cx="17" cy="14" r="1" fill="#9EA2AB"/>
-                                        </svg>
-                                        <p>Комнат: <span>3</span></p>
-                                    </div>
-                                    <div class="projects-gird_item">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 20H10V10H13H16H20V4H4V20Z" stroke="#9EA2AB"/>
-                                            <path d="M16 7V10H13M13 10V7M13 10H10M10 10V7M10 10H7M10 10V13M10 13H7M10 13V16H7" stroke="#9EA2AB"/>
-                                        </svg>
-                                        <p>Размер: <span>15x12</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="projects-btns">
-                                <button class="projects-btn_pdf">СКАЧАТЬ PDF ПРОЕКТА</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </section>
         <section id="advantages" class="advantages">
@@ -312,7 +301,7 @@ get_header();
                         </div>
                     </div>
                     <div class="advantages__grid-right">
-                        <img width="100%" style="display: block !important;" src="<?=get_template_directory_uri();?>/img/adv.png" alt="">
+                        <img width="100%" style="display: block !important;" src="<?=get_template_directory_uri();?>/img/adv2.png" alt="">
                     </div>
                 </div>
             </div>
