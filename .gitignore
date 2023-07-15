@@ -1,3 +1,4 @@
+/old-site/*
 /node_modules/*
 .idea/
 wp-config.php
