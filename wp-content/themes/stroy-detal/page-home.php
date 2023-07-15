@@ -497,6 +497,63 @@ get_header();
             </section>
         <?php endif; ?>
 
+        <?php
+        // TODO Подправить фронт акций
+        $ackiiTitle = get_field('ackii_title');
+        $ackii = get_field('ackii'); ?>
+
+        <?php if($ackii != ''): ?>
+            <section id="realized" class="realized">
+                <div class="container">
+                    <div class="realized__top">
+                        <?php if($ackiiTitle != ''): ?>
+                            <h4 class="realized__top--title"><?=$ackiiTitle;?></h4>
+                        <?php endif; ?>
+
+                        <div class="realized__top--items">
+                            <div class="realized__top--items_btns">
+                                <div class="realized-button-prev">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                    </svg>
+                                </div>
+                                <div class="realized-button-next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="realized__swiper">
+                        <div class="swiper swiper-realized">
+                            <div class="swiper-wrapper">
+                                <?php foreach ($ackii as $item):
+
+                                    $itemAksii = $item['item_ackii']->ID;
+                                    if($itemAksii != ''): ?>
+                                        <div class="swiper-slide">
+                                            <div class="swiper-realized-item">
+                                                <img src="<?=get_the_post_thumbnail_url($itemAksii, 'Фото 500px');?>" alt="<?=get_the_title($itemAksii);?>" loading="lazy">
+                                                <div>
+                                                    <span><?=get_the_title($itemAksii);?></span>
+                                                    <a class="realized-hidden" href="<?=get_permalink($itemAksii);?>">смотреть проект</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif;
+
+                                endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        <?php endif; ?>
+
+
         <section class="qna">
             <div class="container">
                 <div class="qna__main">
