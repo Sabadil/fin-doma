@@ -38,7 +38,7 @@
             <a href="tel:+79203849184">+7 (920) 384 91 84</a>
             <p>Без выходных: 9:00-18:00</p>
           </div>
-          <button class="header-button">
+          <button class="header-button form-modal-1">
             ЗАКАЗАТЬ ЗВОНОК
           </button>
           <div x-data="{ open: false }" class="header-burger">
@@ -70,16 +70,16 @@
                     <a href="#advantages" @click="open = false">Преимущества</a>
                   </li>
                   <li>
-                    <a href="#" @click="open = false">Технологии</a>
+                    <a href="#realized" @click="open = false">Технологии</a>
                   </li>
                   <li>
-                    <a href="#" @click="open = false">Производство</a>
+                    <a href="#prod" @click="open = false">Производство</a>
                   </li>
                   <li>
-                    <a href="#" @click="open = false">Отзывы</a>
+                    <a href="#reviews" @click="open = false">Отзывы</a>
                   </li>
                   <li>
-                    <a href="#" @click="open = false">Контакты</a>
+                    <a href="#contacts" @click="open = false">Контакты</a>
                   </li>
                 </ul>
                 <div class="menu-items__content--bottom">
@@ -108,16 +108,16 @@
                     <a href="#advantages">Преимущества</a>
                   </li>
                   <li class="page-list_item">
-                    <a href="">Технологии</a>
+                    <a href="#realized">Технологии</a>
                   </li>
                   <li class="page-list_item">
-                    <a href="">Производство</a>
+                    <a href="#prod">Производство</a>
                   </li>
                   <li class="page-list_item">
-                    <a href="">Отзывы</a>
+                    <a href="#reviews">Отзывы</a>
                   </li>
                   <li class="page-list_item">
-                    <a href="">Контакты</a>
+                    <a href="#contacts">Контакты</a>
                   </li>
                 </ul>
               </nav>
@@ -245,7 +245,63 @@
                 </div>
                 <div class="projects-btns">
                   <button class="projects-btn_pdf">СКАЧАТЬ PDF ПРОЕКТА</button>
-                  <button class="projects-btn_consult">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
+                </div>
+              </div>
+            </div>
+            <div class="our-projects-item">
+              <div class="swiper our-porject-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                  </div>
+                  <div class="swiper-slide">
+                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                  </div>
+                  <div class="swiper-slide">
+                    <img width="100%" src="assets/images/swiper-img-1.png" alt="swiper-img">
+                  </div>
+                </div>
+              </div>
+              <div class="our-projects_left">
+                <div class="our-projects_title">
+                  <h3>Одноэтажный жилой дом Тип-1А</h3>
+                  <p>от 5 800 000 ₽</p>
+                </div>
+                <div class="projects-left_descr">
+                  Одноэтажный финский дом на четыре спальни, с террасой и сауной. Он подходит как в качестве дачи для летнего отдыха на природе, так и для постоянного проживания.
+                </div>
+                <div class="projects-left_flex">
+                  <div class="projects-left_grid">
+                    <div class="projects-gird_item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 4H19V12M19 12H16.5M19 12V20H10.5M10.5 20V12M10.5 20H4V4H8L11 6.13333M10.5 12H13M10.5 12H8" stroke="#9EA2AB"/>
+                      </svg>
+                      <p>Площадь: <span>181</span>м2</p>
+                    </div>
+                    <div class="projects-gird_item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4V20H4V15H9.33333V9H14.6667V4H20Z" stroke="#9EA2AB"/>
+                      </svg>
+                      <p>Этажей: <span>1</span></p>
+                    </div>
+                    <div class="projects-gird_item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 3V21H4V3H20Z" stroke="#9EA2AB"/>
+                        <circle cx="17" cy="14" r="1" fill="#9EA2AB"/>
+                      </svg>
+                      <p>Комнат: <span>3</span></p>
+                    </div>
+                    <div class="projects-gird_item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 20H10V10H13H16H20V4H4V20Z" stroke="#9EA2AB"/>
+                        <path d="M16 7V10H13M13 10V7M13 10H10M10 10V7M10 10H7M10 10V13M10 13H7M10 13V16H7" stroke="#9EA2AB"/>
+                      </svg>
+                      <p>Размер: <span>15x12</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="projects-btns">
+                  <button class="projects-btn_pdf">СКАЧАТЬ PDF ПРОЕКТА</button>
                 </div>
               </div>
             </div>
@@ -451,7 +507,7 @@
           </div>
         </div>
       </section>
-      <section class="prod">
+      <section class="prod" id="prod">
         <div class="container">
           <h4 class="prod__title">
             Собственное производство
@@ -464,7 +520,7 @@
           </div>
         </div>
       </section>
-      <section class="reviews">
+      <section class="reviews" id="reviews">
         <div class="container">
           <div class="reviews__top">
             <h3 class="reviews__top-title">
@@ -532,7 +588,7 @@
                 <p>Если здесь нет ответа на ваш вопрос и вам нужна консультация — смело обращайтесь, мы поможем!</p>
               </div>
               <div>
-                <button class="qna__main--left-btn">задать вопрос</button>
+                <button class="qna__main--left-btn form-modal-2">задать вопрос</button>
               </div>
             </div>
             <div class="qna__main--qna">
@@ -576,7 +632,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts" id="contacts">
           <div class="contacts__items">
             <div class="contacts__items--left">
               <div class="contacts__items--left-info">
@@ -681,22 +737,22 @@
                   <a href="#about">О нас</a>
                 </li>
                 <li>
-                  <a href="#">Проекты</a>
+                  <a href="#our-projects">Проекты</a>
                 </li>
                 <li>
-                  <a href="#">Преимущества</a>
+                  <a href="#advantages">Преимущества</a>
                 </li>
                 <li>
-                  <a href="#">Технологии</a>
+                  <a href="#realized">Технологии</a>
                 </li>
                 <li>
-                  <a href="#">Этапы работ</a>
+                  <a href="#prod">Этапы работ</a>
                 </li>
                 <li>
-                  <a href="#">Отзывы</a>
+                  <a href="#reviews">Отзывы</a>
                 </li>
                 <li>
-                  <a href="#">Контакты</a>
+                  <a href="#contacts">Контакты</a>
                 </li>
               </ul>
             </div>
@@ -718,7 +774,7 @@
             </div>
             <div class="footer__grid-socials">
               <div>
-                <a href="#">
+                <a target="_blank" href="https://wa.me/+79203849184">
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="23.5" stroke="#444444"/>
                     <path d="M24 14C29.523 14 34 18.477 34 24C34 29.523 29.523 34 24 34C22.2328 34.0029 20.4967 33.5352 18.97 32.645L14.004 34L15.356 29.032C14.4651 27.5049 13.9971 25.768 14 24C14 18.477 18.477 14 24 14ZM20.592 19.3L20.392 19.308C20.2625 19.3159 20.136 19.3499 20.02 19.408C19.9115 19.4694 19.8125 19.5462 19.726 19.636C19.606 19.749 19.538 19.847 19.465 19.942C19.0951 20.4229 18.896 21.0133 18.899 21.62C18.901 22.11 19.029 22.587 19.229 23.033C19.638 23.935 20.311 24.89 21.199 25.775C21.413 25.988 21.623 26.202 21.849 26.401C22.9524 27.3725 24.2673 28.073 25.689 28.447L26.257 28.534C26.442 28.544 26.627 28.53 26.813 28.521C27.1043 28.506 27.3886 28.4271 27.646 28.29C27.777 28.2225 27.9048 28.1491 28.029 28.07C28.029 28.07 28.072 28.042 28.154 27.98C28.289 27.88 28.372 27.809 28.484 27.692C28.567 27.606 28.639 27.505 28.694 27.39C28.772 27.227 28.85 26.916 28.882 26.657C28.906 26.459 28.899 26.351 28.896 26.284C28.892 26.177 28.803 26.066 28.706 26.019L28.124 25.758C28.124 25.758 27.254 25.379 26.722 25.137C26.6663 25.1127 26.6067 25.0988 26.546 25.096C26.4776 25.089 26.4085 25.0967 26.3433 25.1186C26.2781 25.1405 26.2183 25.1761 26.168 25.223C26.163 25.221 26.096 25.278 25.373 26.154C25.3315 26.2098 25.2744 26.2519 25.2088 26.2751C25.1433 26.2982 25.0723 26.3013 25.005 26.284C24.9399 26.2665 24.876 26.2445 24.814 26.218C24.69 26.166 24.647 26.146 24.562 26.11C23.9881 25.8595 23.4567 25.5211 22.987 25.107C22.861 24.997 22.744 24.877 22.624 24.761C22.2306 24.3842 21.8877 23.958 21.604 23.493L21.545 23.398C21.5026 23.3342 21.4684 23.2653 21.443 23.193C21.405 23.046 21.504 22.928 21.504 22.928C21.504 22.928 21.747 22.662 21.86 22.518C21.97 22.378 22.063 22.242 22.123 22.145C22.241 21.955 22.278 21.76 22.216 21.609C21.936 20.925 21.646 20.244 21.348 19.568C21.289 19.434 21.114 19.338 20.955 19.319C20.901 19.313 20.847 19.307 20.793 19.303C20.6587 19.2963 20.5241 19.2977 20.39 19.307L20.591 19.299L20.592 19.3Z" fill="white"/>
@@ -726,7 +782,7 @@
                 </a>
               </div>
               <div>
-                <a href="#">
+                <a target="_blank" href="https://t.me/+79203849184">
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="23.5" stroke="#444444"/>
                     <g clip-path="url(#clip0_268_2961)">
@@ -741,15 +797,7 @@
                 </a>
               </div>
               <div>
-                <a href="#">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="24" r="23.5" stroke="#444444"/>
-                    <path d="M28.5 14.25H19.5C18.1081 14.2515 16.7736 14.8051 15.7893 15.7893C14.8051 16.7736 14.2515 18.1081 14.25 19.5V28.5C14.2515 29.8919 14.8051 31.2264 15.7893 32.2107C16.7736 33.1949 18.1081 33.7485 19.5 33.75H28.5C29.8919 33.7485 31.2264 33.1949 32.2107 32.2107C33.1949 31.2264 33.7485 29.8919 33.75 28.5V19.5C33.7485 18.1081 33.1949 16.7736 32.2107 15.7893C31.2264 14.8051 29.8919 14.2515 28.5 14.25ZM24 28.5C23.11 28.5 22.24 28.2361 21.4999 27.7416C20.7599 27.2471 20.1831 26.5443 19.8425 25.7221C19.5019 24.8998 19.4128 23.995 19.5865 23.1221C19.7601 22.2492 20.1887 21.4474 20.818 20.818C21.4474 20.1887 22.2492 19.7601 23.1221 19.5865C23.995 19.4128 24.8998 19.5019 25.7221 19.8425C26.5443 20.1831 27.2471 20.7599 27.7416 21.4999C28.2361 22.24 28.5 23.11 28.5 24C28.4988 25.1931 28.0243 26.337 27.1806 27.1806C26.337 28.0243 25.1931 28.4988 24 28.5ZM29.625 19.5C29.4025 19.5 29.185 19.434 29 19.3104C28.815 19.1868 28.6708 19.0111 28.5856 18.8055C28.5005 18.6 28.4782 18.3738 28.5216 18.1555C28.565 17.9373 28.6722 17.7368 28.8295 17.5795C28.9868 17.4222 29.1873 17.315 29.4055 17.2716C29.6238 17.2282 29.85 17.2505 30.0555 17.3356C30.2611 17.4208 30.4368 17.565 30.5604 17.75C30.684 17.935 30.75 18.1525 30.75 18.375C30.75 18.6734 30.6315 18.9595 30.4205 19.1705C30.2095 19.3815 29.9234 19.5 29.625 19.5ZM27 24C27 24.5933 26.8241 25.1734 26.4944 25.6667C26.1648 26.1601 25.6962 26.5446 25.148 26.7716C24.5999 26.9987 23.9967 27.0581 23.4147 26.9424C22.8328 26.8266 22.2982 26.5409 21.8787 26.1213C21.4591 25.7018 21.1734 25.1672 21.0576 24.5853C20.9419 24.0033 21.0013 23.4001 21.2284 22.8519C21.4554 22.3038 21.8399 21.8352 22.3333 21.5056C22.8266 21.1759 23.4067 21 24 21C24.7956 21 25.5587 21.3161 26.1213 21.8787C26.6839 22.4413 27 23.2044 27 24Z" fill="white"/>
-                  </svg>                                                     
-                </a>
-              </div>
-              <div>
-                <a href="#">
+                <a href="mailto:stroy-detal.rf@yandex.ru">
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="23.5" stroke="#444444"/>
                     <path d="M32 16H16C14.9 16 14.01 16.9 14.01 18L14 30C14 31.1 14.9 32 16 32H32C33.1 32 34 31.1 34 30V18C34 16.9 33.1 16 32 16ZM31.6 20.25L24.53 24.67C24.21 24.87 23.79 24.87 23.47 24.67L16.4 20.25C16.2997 20.1937 16.2119 20.1177 16.1419 20.0265C16.0719 19.9352 16.0211 19.8308 15.9926 19.7194C15.9641 19.608 15.9585 19.4919 15.9762 19.3783C15.9938 19.2647 16.0343 19.1558 16.0953 19.0583C16.1562 18.9608 16.2363 18.8767 16.3307 18.811C16.4251 18.7453 16.5319 18.6995 16.6445 18.6763C16.7571 18.6531 16.8733 18.653 16.986 18.6759C17.0986 18.6989 17.2055 18.7445 17.3 18.81L24 23L30.7 18.81C30.7945 18.7445 30.9014 18.6989 31.014 18.6759C31.1267 18.653 31.2429 18.6531 31.3555 18.6763C31.4681 18.6995 31.5749 18.7453 31.6693 18.811C31.7637 18.8767 31.8438 18.9608 31.9047 19.0583C31.9657 19.1558 32.0062 19.2647 32.0238 19.3783C32.0415 19.4919 32.0359 19.608 32.0074 19.7194C31.9789 19.8308 31.9281 19.9352 31.8581 20.0265C31.7881 20.1177 31.7003 20.1937 31.6 20.25Z" fill="white"/>
@@ -757,6 +805,39 @@
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--MICROMODAL-->
+      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+              <div class="modal__title" id="modal-1-title">
+                Заказать консультацию
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                  <svg data-micromodal-close width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 7L17 17M7 17L17 7" stroke="#9297AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+
+              <form action="" class="modal-form">
+                <input class="modal-form__input" type="text" placeholder="Ваше имя" required>
+                <input class="modal-form__input" type="tel" name="phone" placeholder="Ваш номер телефона" required>
+                <div>
+                  <label class="cyberpunk-checkbox-label">
+                    <input class="cyberpunk-checkbox" type="checkbox" checked>
+                    Нажимая на кнопку, вы соглашаетесь на обработку персональных данных
+                  </label>
+                </div>
+                <div>
+                  <button class="form-submit-btn">
+                    задать вопрос
+                  </button>
+                </div>
+              </form>
           </div>
         </div>
       </div>

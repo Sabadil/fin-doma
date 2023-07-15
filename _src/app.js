@@ -8,7 +8,32 @@ import './app.scss';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
+import MicroModal from 'micromodal';
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
+      //micromodal_init
+      MicroModal.init({
+        openTrigger: 'data-custom-open',
+        closeTrigger: 'data-custom-close',
+        disableScroll: false,
+        disableFocus: false,
+        awaitCloseAnimation: true,
+        debugMode: false,
+      });
+
+      let button1 = document.querySelector('.form-modal-1');
+      button1.addEventListener('click', function(){
+        MicroModal.show('modal-1');
+      });
+      let button2 = document.querySelector('.form-modal-2');
+      button2.addEventListener('click', function(){
+        MicroModal.show('modal-1');
+      });
+
+
+
     const swiperOurProjects = new Swiper(".our-porject-swiper", {
         centeredSlides: true,
         loop: true,
