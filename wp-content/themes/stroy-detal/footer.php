@@ -127,15 +127,21 @@
                     </button>
                 </div>
 
-                <form action="" class="modal-form">
-                    <input class="modal-form__input" type="text" placeholder="Ваше имя" required>
+                <form class="callback-form modal-form" method="post">
+                    <input type="hidden" name="mailto" value="<?php the_field('mailto', 'options'); ?>">
+                    <input type="hidden" name="subject" value="Заказать консультацию">
+
+                    <input class="modal-form__input" type="text" name="name" placeholder="Ваше имя" required>
                     <input class="modal-form__input" type="tel" name="phone" placeholder="Ваш номер телефона" required>
                     <div>
                         <label class="cyberpunk-checkbox-label">
-                            <input class="cyberpunk-checkbox" type="checkbox" checked>
+                            <input class="cyberpunk-checkbox checkbox checked" type="checkbox" checked>
                             Нажимая на кнопку, вы соглашаетесь на обработку персональных данных
                         </label>
                     </div>
+
+                    <div class="checkbox-error">Согласитесь на обработку персональных данных</div>
+
                     <div>
                         <button class="form-submit-btn">
                             задать вопрос
@@ -145,6 +151,26 @@
             </div>
         </div>
     </div>
+
+    <div class="modal micromodal-slide" id="modal-thx" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-thx-title">
+                <div class="modal__title" id="modal-thx-title">
+                    Заявка принята!
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                        <svg data-micromodal-close width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 7L17 17M7 17L17 7" stroke="#9297AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <p>
+                    Спасибо! Ваше сообщение отправлено. Менеджер свяжется с вами в ближайшее время
+                </p>
+            </div>
+        </div>
+    </div>
+
 </footer>
 
 <?php wp_footer(); ?>

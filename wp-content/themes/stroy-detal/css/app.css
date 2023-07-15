@@ -1719,6 +1719,7 @@
   display: flex;
   align-items: center;
   gap: 45px;
+  justify-content: space-between;
 }
 @media (max-width: 430px) {
   .modal__title {
@@ -1932,6 +1933,16 @@
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
   will-change: transform;
+}
+
+.checkbox-error {
+  display: none;
+  font-size: 14px;
+  color: #980000;
+  margin-top: 20px;
+}
+.checkbox-error_show {
+  display: block;
 }
 
 /*# sourceMappingURL=app.css.map */

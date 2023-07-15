@@ -379,15 +379,21 @@ get_header();
                         <h4 class="manage__form--title">
                             Оставьте заявку и наш менеджер проконсультирует вас
                         </h4>
-                        <form action="">
+                        <form class="callback-form" method="post">
+                            <input type="hidden" name="mailto" value="<?php the_field('mailto', 'options'); ?>">
+                            <input type="hidden" name="subject" value="Оставьте заявку и наш менеджер проконсультирует вас">
+
                             <input type="text" name="name" placeholder="Ваше имя" required>
-                            <input type="tel" placeholder="Ваш номер телефона" required>
+                            <input type="tel" name="phone" placeholder="Ваш номер телефона" required>
                             <div>
                                 <label class="cyberpunk-checkbox-label">
-                                    <input class="cyberpunk-checkbox" type="checkbox" checked>
+                                    <input class="cyberpunk-checkbox checkbox checked" type="checkbox" checked>
                                     Нажимая на кнопку, вы соглашаетесь на обработку персональных данных
                                 </label>
                             </div>
+
+                            <div class="checkbox-error">Согласитесь на обработку персональных данных</div>
+
                             <div>
                                 <button class="form-submit">
                                     задать вопрос
@@ -661,16 +667,22 @@ get_header();
                             <span>Напишите нам и мы перезвоним в течение 15 минут</span>
                         </div>
                         <div class="contacts__items--right-form_form">
-                            <form action="">
-                                <input type="text" placeholder="Ваше имя" required>
+                            <form class="callback-form" method="post">
+                                <input type="hidden" name="mailto" value="<?php the_field('mailto', 'options'); ?>">
+                                <input type="hidden" name="subject" value="Остались вопросы?">
+
+                                <input type="text" name="name" placeholder="Ваше имя" required>
                                 <input type="tel" name="phone" id="phone" placeholder="Ваш номер телефона">
-                                <textarea name="" id="" cols="30" rows="5" placeholder="Ваш запрос или пожелания"></textarea>
+                                <textarea name="text" id="" cols="30" rows="5" placeholder="Ваш запрос или пожелания"></textarea>
                                 <div>
                                     <label class="cyberpunk-checkbox-label">
-                                        <input class="cyberpunk-checkbox" type="checkbox" checked>
+                                        <input class="cyberpunk-checkbox checkbox checked" type="checkbox" checked>
                                         Нажимая на кнопку, вы соглашаетесь на обработку персональных данных
                                     </label>
                                 </div>
+
+                                <div class="checkbox-error">Согласитесь на обработку персональных данных</div>
+
                                 <div>
                                     <button class="form-submit-btn">
                                         задать вопрос

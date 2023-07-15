@@ -1743,6 +1743,7 @@ $lg: 1440px;
     display: flex;
     align-items: center;
     gap: 45px;
+    justify-content: space-between;
 
     @media (max-width:$xs) {
         font-weight: 24px;
@@ -1947,4 +1948,15 @@ $lg: 1440px;
   .micromodal-slide .modal__overlay {
     will-change: transform;
   }
-  
+
+// TODO Подправить верстку проверки чекбокса в разных формах
+.checkbox-error {
+    display: none;
+    font-size: 14px;
+    color: #980000;
+    margin-top: 20px;
+
+    &_show {
+        display: block;
+    }
+}

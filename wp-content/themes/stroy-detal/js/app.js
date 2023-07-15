@@ -67,4 +67,42 @@ document.addEventListener('DOMContentLoaded', () => {
 			prevEl: ".reviews-button-prev",
 		},
 	});
+
+	// Класс для проверки чекбокса при отправке
+	$('.checkbox').change(function(){
+		$(this).toggleClass('checked');
+	});
+
+	// Отправка данных на сервер
+	$('.callback-form').trigger('reset');
+	$(function() {
+		$('.callback-form').on('submit', function(e) {
+			e.preventDefault();
+
+			// Если не приняли соглашение
+			if ($(".checkbox", $(this)).hasClass('checked')) {
+				$('.checkbox-error', $(this)).removeClass('checkbox-error_show');
+			} else {
+				$('.checkbox-error', $(this)).addClass('checkbox-error_show');
+				return;
+			}
+
+			$.ajax({
+				url: '/wp-content/themes/stroy-detal/send.php',
+				type: 'POST',
+				contentType: false,
+				processData: false,
+				data: new FormData(this),
+				success: function(msg) {
+					console.log(msg);
+					if (msg == 'ok') {
+						MicroModal.show('modal-thx');
+						$('#form').trigger('reset'); // очистка формы
+					} else {
+						alert('Ошибка при отправке сообщения!');
+					}
+				}
+			});
+		});
+	});
 })
