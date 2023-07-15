@@ -436,63 +436,67 @@ get_header();
             </section>
         <?php endif; ?>
 
-        <section class="reviews" id="reviews">
-            <div class="container">
-                <div class="reviews__top">
-                    <h3 class="reviews__top-title">
-                        Отзывы наших клиентов
-                    </h3>
-                    <div class="reviews__top-btns">
-                        <div class="reviews-button-prev">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-                            </svg>
-                        </div>
-                        <div class="reviews-button-next">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="reviews__main">
-                    <div class="swiper swiper-reviews">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="swiper-reviews-item">
-                                    <div>
-                                        <span>Иванов Сергей</span>
-                                        <div class="swiper-reviews-item__text">
-                                            <p>Компания «Строй-Деталь.рф» основана в 2015 году. Мы строим красивые и энергоэффективные дома с продуманными планировками.</p>
-                                            <p>Компания «Строй-Деталь.рф» основана в 2015 году. Мы строим красивые и энергоэффективные дома с продуманными планировками.</p>
-                                        </div>
-                                        <span class="swiper-reviews-item__proj">
-                        Проект: одноэтажный жилой дом Тип-1А
-                      </span>
-                                    </div>
-                                    <img src="<?=get_template_directory_uri();?>/img/otzv.png" alt="otzv">
-                                </div>
+
+        <?php
+        $reviewsTitle = get_field('reviews_title');
+        $reviews = get_field('reviews'); ?>
+
+        <?php if($reviews != ''): ?>
+            <section class="reviews" id="reviews">
+                <div class="container">
+                    <div class="reviews__top">
+                        <?php if($reviewsTitle != ''): ?>
+                            <h3 class="reviews__top-title"><?=$reviewsTitle;?></h3>
+                        <?php endif; ?>
+
+                        <div class="reviews__top-btns">
+                            <div class="reviews-button-prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                </svg>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-reviews-item">
-                                    <div>
-                                        <span>Иванов Сергей</span>
-                                        <div class="swiper-reviews-item__text">
-                                            <p>Компания «Строй-Деталь.рф» основана в 2015 году. Мы строим красивые и энергоэффективные дома с продуманными планировками.</p>
-                                            <p>Компания «Строй-Деталь.рф» основана в 2015 году. Мы строим красивые и энергоэффективные дома с продуманными планировками.</p>
-                                        </div>
-                                        <span class="swiper-reviews-item__proj">
-                        Проект: одноэтажный жилой дом Тип-1А
-                      </span>
-                                    </div>
-                                    <img src="<?=get_template_directory_uri();?>/img/otzv.png" alt="otzv">
-                                </div>
+                            <div class="reviews-button-next">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
                             </div>
                         </div>
                     </div>
+
+                    <div class="reviews__main">
+                        <div class="swiper swiper-reviews">
+                            <div class="swiper-wrapper">
+                                <?php foreach ($reviews as $item):
+
+                                    $itemTitle = $item['item_title'];
+                                    $itemProjectTitle = $item['item_project_title'];
+                                    $itemDesc = $item['item_desc'];
+                                    $itemImage = wp_get_attachment_image_url($item['item_image'], 'Фото 768px');
+
+                                    if($itemTitle != '' && $itemDesc != '' && $itemImage != ''): ?>
+                                        <div class="swiper-slide">
+                                            <div class="swiper-reviews-item">
+                                                <div>
+                                                    <span><?=$itemTitle;?></span>
+                                                    <div class="swiper-reviews-item__text"><?=$itemDesc;?></div>
+
+                                                    <?php if($itemProjectTitle != ''): ?>
+                                                        <span class="swiper-reviews-item__proj"><?=$itemProjectTitle;?></span>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <img src="<?=$itemImage;?>" alt="<?=$itemProjectTitle;?>" loading="lazy">
+                                            </div>
+                                        </div>
+                                    <?php endif;
+
+                                endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
+
         <section class="qna">
             <div class="container">
                 <div class="qna__main">
