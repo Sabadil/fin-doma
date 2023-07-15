@@ -77,6 +77,7 @@ get_header();
                 </div>
             </div>
         </section>
+
         <section id="about" class="about">
             <div class="container">
                 <div class="about-main">
@@ -111,17 +112,18 @@ get_header();
                 </div>
             </div>
         </section>
-        <section id="our-projects" class="our-projects">
-            <div class="container">
-                <?php
-                $ourProjectsTitle = get_field('our_projects_title');
-                $ourProjects = get_field('our_projects'); ?>
 
-                <?php if($ourProjectsTitle != ''): ?>
-                    <h2><?=$ourProjectsTitle;?></h2>
-                <?php endif; ?>
-                
-                <?php if($ourProjects != ''): ?>
+        <?php
+        $ourProjectsTitle = get_field('our_projects_title');
+        $ourProjects = get_field('our_projects'); ?>
+
+        <?php if($ourProjects != ''): ?>
+            <section id="our-projects" class="our-projects">
+                <div class="container">
+                    <?php if($ourProjectsTitle != ''): ?>
+                        <h2><?=$ourProjectsTitle;?></h2>
+                    <?php endif; ?>
+
                     <div class="our-projects_main">
                         <?php foreach ($ourProjects as $item): ?>
 
@@ -218,9 +220,11 @@ get_header();
 
                         <?php endforeach; ?>
                     </div>
-                <?php endif; ?>
-            </div>
-        </section>
+
+                </div>
+            </section>
+        <?php endif; ?>
+
         <section id="advantages" class="advantages">
             <div class="container">
                 <h4 class="advantages__title">
@@ -306,91 +310,68 @@ get_header();
                 </div>
             </div>
         </section>
-        <section id="realized" class="realized">
-            <div class="container">
-                <div class="realized__top">
-                    <h4 class="realized__top--title">
-                        Реализованные проекты
-                    </h4>
-                    <div class="realized__top--items">
-                        <p class="realized__top--items_text">Собрали для вас фотографии со строек в одном месте, чтобы вы могли ближе познакомиться с нашей компанией</p>
-                        <div class="realized__top--items_btns">
-                            <div class="realized-button-prev">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-                                </svg>
-                            </div>
-                            <div class="realized-button-next">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="realized__swiper">
-                    <div class="swiper swiper-realized">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="swiper-realized-item">
-                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
-                                    <div>
-                      <span>
-                        Щетниково
-                      </span>
-                                        <a class="realized-hidden" href="">смотреть проект</a>
-                                    </div>
+
+
+        <?php
+        $realizedProjectsTitle = get_field('realized_projects_title');
+        $realizedProjectsDesc = get_field('realized_projects_desc');
+        $realizedProjects = get_field('realized_projects'); ?>
+
+        <?php if($realizedProjects != ''): ?>
+            <section id="realized" class="realized">
+                <div class="container">
+                    <div class="realized__top">
+                        <?php if($realizedProjectsTitle != ''): ?>
+                            <h4 class="realized__top--title"><?=$realizedProjectsTitle;?></h4>
+                        <?php endif; ?>
+
+                        <div class="realized__top--items">
+                            <?php if($realizedProjectsDesc != ''): ?>
+                                <p class="realized__top--items_text"><?=$realizedProjectsDesc;?></p>
+                            <?php endif; ?>
+
+                            <div class="realized__top--items_btns">
+                                <div class="realized-button-prev">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                    </svg>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-realized-item">
-                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
-                                    <div>
-                      <span>
-                        Щетниково5555
-                      </span>
-                                        <a class="realized-hidden" href="">смотреть проект</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-realized-item">
-                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
-                                    <div>
-                      <span>
-                        Щетниково444
-                      </span>
-                                        <a class="realized-hidden" href="">смотреть проект</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-realized-item">
-                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
-                                    <div>
-                      <span>
-                        Щетниково123
-                      </span>
-                                        <a class="realized-hidden" href="">смотреть проект</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-realized-item">
-                                    <img src="<?=get_template_directory_uri();?>/img/realized.png" alt="">
-                                    <div>
-                      <span>
-                        Щетниково2222
-                      </span>
-                                        <a class="realized-hidden" href="">смотреть проект</a>
-                                    </div>
+                                <div class="realized-button-next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="realized__swiper">
+                        <div class="swiper swiper-realized">
+                            <div class="swiper-wrapper">
+                                <?php foreach ($realizedProjects as $item):
+
+                                    $itemProject = $item['item_project']->ID;
+                                    if($itemProject != ''): ?>
+                                        <div class="swiper-slide">
+                                            <div class="swiper-realized-item">
+                                                <img src="<?=get_the_post_thumbnail_url($itemProject, 'Фото 500px');?>" alt="<?=get_the_title($itemProject);?>" loading="lazy">
+                                                <div>
+                                                    <span><?=get_the_title($itemProject);?></span>
+                                                    <a class="realized-hidden" href="<?=get_permalink($itemProject);?>">смотреть проект</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif;
+
+                                endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
+
         <section class="manage">
             <div class="container">
                 <div class="manage__box">
